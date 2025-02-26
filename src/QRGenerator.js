@@ -69,7 +69,7 @@ const QRGenerator = () => {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Entrez votre texte ici"
+          placeholder="Entrez votre texte ou lien ici"
           style={{
             width: "100%",
             padding: "0.75rem",
@@ -107,7 +107,7 @@ const QRGenerator = () => {
           <button
             onClick={handleDownload}
             style={{
-              marginTop: "2rem",
+              marginTop: "1rem",
               padding: "1rem 1.5rem",
               fontSize: "1rem",
               border: "none",
