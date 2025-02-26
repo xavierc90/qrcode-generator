@@ -41,5 +41,14 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      (function () {
+        if (window.location.search.indexOf("fbclid") > -1) {
+          const url = new URL(window.location.href);
+          url.searchParams.delete("fbclid");
+          window.history.replaceState({}, document.title, url.toString());
+        }
+      })();
+    </script>
   </body>
 </html>
