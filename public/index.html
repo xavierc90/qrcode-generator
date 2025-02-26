@@ -43,10 +43,12 @@
     <div id="root"></div>
     <script>
       (function () {
-        if (window.location.search.indexOf("fbclid") > -1) {
-          const url = new URL(window.location.href);
-          url.searchParams.delete("fbclid");
-          window.history.replaceState({}, document.title, url.toString());
+        if (window.location.hostname === "l.facebook.com") {
+          const urlParams = new URLSearchParams(window.location.search);
+          const targetUrl = urlParams.get("u");
+          if (targetUrl) {
+            window.location.href = decodeURIComponent(targetUrl);
+          }
         }
       })();
     </script>
